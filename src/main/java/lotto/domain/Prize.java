@@ -30,4 +30,12 @@ public enum Prize {
     public int getMoney() {
         return this.money;
     }
+
+    public int getMatchedNumberCount() {
+        return matchedNumberCount;
+    }
+
+    public int getMatchedBonusNumberCount() {
+        return matchedBonusNumberCount;
+    }
 }
