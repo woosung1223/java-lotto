@@ -13,9 +13,9 @@ public class LottoSystem {
         userMoney = money;
     }
 
-    public LottoDTO getPurchasedLotto(int money) {
+    public LottoDTO getPurchasedLotto() {
         LottoMachine lottoMachine = new LottoMachine();
-        userLotto = lottoMachine.buyLotto(money);
+        userLotto = lottoMachine.buyLotto(userMoney);
         return new LottoDTO(userMoney, userLotto);
     }
 
