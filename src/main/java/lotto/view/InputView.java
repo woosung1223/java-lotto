@@ -2,11 +2,14 @@ package lotto.view;
 
 import camp.nextstep.edu.missionutils.Console;
 import lotto.verifier.MoneyVerifier;
+import lotto.verifier.WinningLottoVerifier;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class InputView {
+    private final String DELIMITER = ",";
+
     public int readMoney() {
         String line = Console.readLine();
         MoneyVerifier moneyVerifier = new MoneyVerifier();
@@ -14,10 +17,11 @@ public class InputView {
         return Integer.parseInt(line);
     }
 
-    public List<String> readWinningNumber() {
+    public List<String> readWinningLotto() {
         String line = Console.readLine();
-        // TODO: 검증
-        return Arrays.asList(line.split(","));
+        WinningLottoVerifier winningLottoVerifier = new WinningLottoVerifier();
+        winningLottoVerifier.check(line);
+        return Arrays.asList(line.split(DELIMITER));
     }
 
     public int readBonusNumber() {
