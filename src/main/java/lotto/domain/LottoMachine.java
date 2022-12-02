@@ -12,19 +12,12 @@ public class LottoMachine {
     private final int END_INCLUSIVE = 45;
     private final int LOTTO_SIZE = 6;
 
-    private int receipt;
-
     public List<Lotto> buyLotto(int money) {
         int lottoAmount = money / DIVIDING_MONEY;
-        receipt = lottoAmount;
         return Stream.iterate(0, i -> i + 1)
                 .limit(lottoAmount)
                 .map(i -> new Lotto(makeRandomList()))
                 .collect(Collectors.toList());
-    }
-
-    public int getReceipt() {
-        return receipt;
     }
 
     private List<Integer> makeRandomList() {
