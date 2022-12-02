@@ -19,7 +19,8 @@ public class LottoSystem {
         return new LottoDTO(userMoney, userLotto);
     }
 
-    public StatisticsDTO getStatistics(Lotto winningLotto, int bonusNumber) {
+    public StatisticsDTO getStatistics(List<Integer> numbers, int bonusNumber) {
+        Lotto winningLotto = new Lotto(numbers);
         Judge judge = new Judge();
         List<Prize> award = judge.makeAward(userLotto, winningLotto, bonusNumber);
         float yield = judge.makeYield(userMoney, award);
