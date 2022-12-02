@@ -9,10 +9,13 @@ public class LottoSystem {
     private List<Lotto> userLotto;
     private int userMoney;
 
+    public void putMoney(int money) {
+        userMoney = money;
+    }
+
     public LottoDTO getPurchasedLotto(int money) {
         LottoMachine lottoMachine = new LottoMachine();
         userLotto = lottoMachine.buyLotto(money);
-        userMoney = money;
         return new LottoDTO(userMoney, userLotto);
     }
 
