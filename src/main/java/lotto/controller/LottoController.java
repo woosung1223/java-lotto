@@ -12,8 +12,12 @@ public class LottoController {
     private final OutputView outputView = new OutputView();
 
     public void run() {
-        startPayRoutine();
-        startPrizeRoutine();
+        try {
+            startPayRoutine();
+            startPrizeRoutine();
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     private void startPayRoutine() {
