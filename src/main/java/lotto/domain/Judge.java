@@ -12,4 +12,12 @@ public class Judge {
         });
         return award;
     }
+
+    public float makeYield(int userMoney, List<Prize> award) {
+        int awardMoney = 0;
+        for (Prize prize : award) {
+            awardMoney += prize.getMoney();
+        }
+        return ((userMoney + (float)awardMoney) / userMoney - 1) * 100;
+    }
 }
