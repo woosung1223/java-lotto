@@ -26,4 +26,8 @@ public enum Prize {
                 .findFirst()
                 .orElseThrow(RuntimeException::new);
     }
+
+    public int getMoney() {
+        return this.money;
+    }
 }

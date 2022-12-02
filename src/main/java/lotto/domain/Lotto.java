@@ -10,6 +10,12 @@ public class Lotto {
         this.numbers = numbers;
     }
 
+    public int countSameNumberWith(Lotto anotherLotto) {
+        return (int) numbers.stream()
+                .filter(anotherLotto.numbers::contains)
+                .count();
+    }
+
     private void validate(List<Integer> numbers) {
         if (numbers.size() != 6) {
             throw new IllegalArgumentException();
