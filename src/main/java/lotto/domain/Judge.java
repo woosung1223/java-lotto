@@ -3,7 +3,7 @@ package lotto.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PrizeGiver {
+public class Judge {
     public List<Prize> makeAward(List<Lotto> userLotto, Lotto winningLotto, int bonusNumber) {
         List<Prize> award = new ArrayList<>();
         userLotto.forEach(lotto -> {
