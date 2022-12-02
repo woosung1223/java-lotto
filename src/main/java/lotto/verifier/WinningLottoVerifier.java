@@ -37,11 +37,11 @@ public class WinningLottoVerifier {
     }
 
     private void checkEachInRange(List<String> splitElement) {
-        int eligibleCount = (int) splitElement.stream()
+        int ineligibleCount = (int) splitElement.stream()
                 .filter(element -> Integer.parseInt(element) < RANGE_LOWERBOUND ||
                         Integer.parseInt(element) > RANGE_UPPERBOUND)
                 .count();
-        if (eligibleCount != splitElement.size()) {
+        if (ineligibleCount != 0) {
             throw new IllegalArgumentException(EACH_IS_NOT_IN_RANGE);
         }
     }
