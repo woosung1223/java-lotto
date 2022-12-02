@@ -1,6 +1,7 @@
 package lotto.view;
 
 import camp.nextstep.edu.missionutils.Console;
+import lotto.verifier.BonusNumberVerifier;
 import lotto.verifier.MoneyVerifier;
 import lotto.verifier.WinningLottoVerifier;
 
@@ -26,7 +27,8 @@ public class InputView {
 
     public int readBonusNumber() {
         String line = Console.readLine();
-        // TODO: 검증
+        BonusNumberVerifier bonusNumberVerifier = new BonusNumberVerifier();
+        bonusNumberVerifier.check(line);
         return Integer.parseInt(line);
     }
 }
