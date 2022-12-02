@@ -16,6 +16,10 @@ public class Lotto {
                 .count();
     }
 
+    public boolean contains(int number) {
+        return numbers.contains(number);
+    }
+
     @Override
     public String toString() {
         return numbers.toString();

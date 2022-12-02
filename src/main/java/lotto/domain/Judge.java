@@ -8,7 +8,10 @@ public class Judge {
         List<Prize> award = new ArrayList<>();
         userLotto.forEach(lotto -> {
             int sameNumberCount = lotto.countSameNumberWith(winningLotto);
-            award.add(Prize.of(sameNumberCount, bonusNumber));
+            boolean hasBonusNumber = lotto.contains(bonusNumber);
+            System.out.println(sameNumberCount);
+            System.out.println(hasBonusNumber);
+            award.add(Prize.of(sameNumberCount, hasBonusNumber));
         });
         return award;
     }
