@@ -12,6 +12,14 @@ public class LottoMachine {
     private final int END_INCLUSIVE = 45;
     private final int LOTTO_SIZE = 6;
 
+    public List<Lotto> buyLotto(int money) {
+        int lottoAmount = money / DIVIDING_MONEY;
+        return Stream.iterate(0, i -> i + 1)
+                .limit(lottoAmount)
+                .map(i -> new Lotto(makeRandomList()))
+                .collect(Collectors.toList());
+    }
+
     private List<Integer> makeRandomList() {
         List<Integer> randomLotto = Randoms.pickUniqueNumbersInRange(START_INCLUSIVE, END_INCLUSIVE, LOTTO_SIZE);
         return randomLotto.stream()
