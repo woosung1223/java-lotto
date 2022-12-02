@@ -16,7 +16,7 @@ public class LottoSystem {
     public LottoDTO getPurchasedLotto() {
         LottoMachine lottoMachine = new LottoMachine();
         userLotto = lottoMachine.buyLotto(userMoney);
-        return new LottoDTO(userMoney, userLotto);
+        return new LottoDTO(userMoney / 1000, userLotto);
     }
 
     public StatisticsDTO getStatistics(List<Integer> numbers, int bonusNumber) {
