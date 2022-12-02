@@ -1,15 +1,16 @@
 package lotto.view;
 
 import camp.nextstep.edu.missionutils.Console;
+import lotto.verifier.MoneyVerifier;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class InputView {
     public int readMoney() {
         String line = Console.readLine();
-        // TODO: 검증
+        MoneyVerifier moneyVerifier = new MoneyVerifier();
+        moneyVerifier.check(line);
         return Integer.parseInt(line);
     }
 
