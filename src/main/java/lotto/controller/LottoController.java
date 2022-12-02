@@ -16,13 +16,13 @@ public class LottoController {
         startPrizeRoutine();
     }
 
-    public void startPayRoutine() {
+    private void startPayRoutine() {
         int money = inputView.readMoney();
         lottoSystem.putMoney(money);
         outputView.printBuyResult(lottoSystem.getPurchasedLotto());
     }
 
-    public void startPrizeRoutine() {
+    private void startPrizeRoutine() {
         List<Integer> winningLotto = inputView.readWinningLotto();
         int bonusNumber = inputView.readBonusNumber();
         outputView.printStatistics(lottoSystem.getStatistics(winningLotto, bonusNumber));
