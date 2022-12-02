@@ -23,7 +23,7 @@ public class LottoSystem {
         Lotto winningLotto = new Lotto(numbers);
         Judge judge = new Judge();
         List<Prize> award = judge.makeAward(userLotto, winningLotto, bonusNumber);
-        float yield = judge.makeYield(userMoney, award);
+        String yield = judge.makeYield(userMoney, award);
 
         return new StatisticsDTO(award, yield);
     }

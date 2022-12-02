@@ -7,9 +7,9 @@ import java.util.List;
 
 public class StatisticsDTO {
     private final List<Prize> prize;
-    private final float yield;
+    private final String yield;
 
-    public StatisticsDTO(List<Prize> prize, float yield) {
+    public StatisticsDTO(List<Prize> prize, String yield) {
         this.prize = Collections.unmodifiableList(prize);
         this.yield = yield;
     }
@@ -18,7 +18,7 @@ public class StatisticsDTO {
         return prize;
     }
 
-    public float getYield() {
+    public String getYield() {
         return yield;
     }
 }

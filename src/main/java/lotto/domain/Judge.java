@@ -1,5 +1,6 @@
 package lotto.domain;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,11 +15,16 @@ public class Judge {
         return award;
     }
 
-    public float makeYield(int userMoney, List<Prize> award) {
+    public String makeYield(int userMoney, List<Prize> award) {
         int awardMoney = 0;
         for (Prize prize : award) {
             awardMoney += prize.getMoney();
         }
-        return ((userMoney + (float)awardMoney) / userMoney - 1) * 100;
+        return formatYield(((userMoney + (float)awardMoney) / userMoney - 1) * 100);
+    }
+
+    private String formatYield(float toFormat) {
+        DecimalFormat decFormat = new DecimalFormat("###,##0.0");
+        return decFormat.format(toFormat);
     }
 }
