@@ -19,7 +19,7 @@ public enum Prize {
         this.matchedBonusNumberCount = matchedBonusNumberCount;
     }
 
-    public Prize of(int matchedNumberCount, int matchedBonusNumberCount) {
+    public static Prize of(int matchedNumberCount, int matchedBonusNumberCount) {
         return Arrays.stream(values())
                 .filter(prize -> prize.matchedNumberCount == matchedNumberCount)
                 .filter(prize -> prize.matchedBonusNumberCount == matchedBonusNumberCount)
